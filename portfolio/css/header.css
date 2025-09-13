@@ -1,0 +1,86 @@
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.header .photo{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.header .title{
+    font-family: "Space Grotesk", sans-serif;
+    text-align: center;
+}
+
+.infomations{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.infomations p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: .4rem;
+    font-size: 1.25rem;
+}
+
+.infomations p::before{
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: .5rem;
+}
+
+.infomations .job::before{
+    background-image: url('/portfolio/assets/icons/pessoa.svg');
+}
+
+.infomations .location::before{
+    background-image: url('/portfolio/assets/icons/localizacao.svg');
+
+}
+
+.infomations .email::before{
+    background-image: url('/portfolio/assets/icons/email.svg');
+
+}
+
+.infomations .phone::before{
+    background-image: url('/portfolio/assets/icons/contato.svg');
+
+}
+
+@media only screen and (min-width: 768px) {
+    .header{
+        display: grid;
+        grid-template-areas: 
+        "photo title"
+        "photo information"
+        ;
+    }
+
+    .header .photo{
+        grid-area: photo;
+        margin: 0 auto;
+    }
+
+    .header .information{
+        grid-area: information;
+    }
+
+    .header .title{
+        grid-area: title;
+        text-align: start;
+        max-width: 200px;
+    }
+}
